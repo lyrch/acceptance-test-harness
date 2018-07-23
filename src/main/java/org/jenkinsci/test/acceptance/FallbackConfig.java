@@ -122,6 +122,8 @@ public class FallbackConfig extends AbstractModule {
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("prefs", Collections.singletonMap(LANGUAGE_SELECTOR, "en"));
 
+            options.setBinary("/usr/bin/google-chrome");
+
             ChromeDriverService.Builder builder = new ChromeDriverService.Builder();
             if (display != null) {
                 builder.withEnvironment(Collections.singletonMap("DISPLAY", display));
